@@ -10,13 +10,13 @@
  */
 package eu.numberfour.n4js.ui.quickfix;
 
-import static eu.numberfour.n4js.ui.internal.N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+import static eu.numberfour.n4js.ui.internal.N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
 
 import com.google.inject.Injector;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.utils.quickfix.QuickfixProviderSupplier;
 
 /**
@@ -30,7 +30,7 @@ public class N4JSQuickfixProviderSupplier implements QuickfixProviderSupplier {
 	}
 
 	private Injector getInjector() {
-		return N4JSActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
+		return N4jsActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
 	}
 
 }

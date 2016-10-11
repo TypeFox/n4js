@@ -23,7 +23,7 @@ import eu.numberfour.n4js.tester.TestTreeRegistry;
 import eu.numberfour.n4js.tester.TesterEventBus;
 import eu.numberfour.n4js.tester.TesterFacade;
 import eu.numberfour.n4js.tester.TesterModule;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Module for the N4 tester UI component.
@@ -40,8 +40,8 @@ public class N4TesterUiModule extends AbstractModule {
 				@Override
 				public Injector load(final String moduleId) throws Exception {
 					if (N4_TESTER_UI_MODULE_ID.equals(moduleId)) {
-						final Injector parentInjector = N4JSActivator.getInstance().getInjector(
-								N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+						final Injector parentInjector = N4jsActivator.getInstance().getInjector(
+								N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 						return parentInjector.createChildInjector(Modules.override(new TesterModule()).with(
 								new N4TesterUiModule()));
 					}

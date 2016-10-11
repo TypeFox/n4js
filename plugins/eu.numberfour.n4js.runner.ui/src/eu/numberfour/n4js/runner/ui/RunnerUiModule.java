@@ -17,7 +17,7 @@ import com.google.common.cache.LoadingCache;
 import com.google.inject.AbstractModule;
 import com.google.inject.Injector;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Module for the N4 runner UI.
@@ -34,8 +34,8 @@ public class RunnerUiModule extends AbstractModule {
 				@Override
 				public Injector load(final String moduleId) throws Exception {
 					if (RUNNER_UI_MODULE_ID.equals(moduleId)) {
-						final Injector parentInjector = N4JSActivator.getInstance().getInjector(
-								N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+						final Injector parentInjector = N4jsActivator.getInstance().getInjector(
+								N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 						return parentInjector.createChildInjector(new RunnerUiModule());
 					}
 					throw new IllegalArgumentException("Unknown module ID: " + moduleId);

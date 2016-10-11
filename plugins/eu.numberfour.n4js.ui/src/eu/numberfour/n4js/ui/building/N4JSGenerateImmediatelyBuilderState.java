@@ -11,7 +11,7 @@
 package eu.numberfour.n4js.ui.building;
 
 import static eu.numberfour.n4js.projectModel.IN4JSProject.N4MF_MANIFEST;
-import static eu.numberfour.n4js.ui.internal.N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+import static eu.numberfour.n4js.ui.internal.N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -55,7 +55,7 @@ import eu.numberfour.n4js.ts.types.TModule;
 import eu.numberfour.n4js.ui.building.BuilderStateLogger.BuilderState;
 import eu.numberfour.n4js.ui.building.instructions.IBuildParticipantInstruction;
 import eu.numberfour.n4js.ui.internal.ContributingResourceDescriptionPersister;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.utils.Arrays2;
 
 /**
@@ -279,8 +279,8 @@ public class N4JSGenerateImmediatelyBuilderState extends ClusteringBuilderState 
 	}
 
 	private void handleCoreException(CoreException e) {
-		N4JSActivator.getInstance().getLog()
-				.log(new Status(IStatus.ERROR, N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS, e.getMessage(), e));
+		N4jsActivator.getInstance().getLog()
+				.log(new Status(IStatus.ERROR, N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS, e.getMessage(), e));
 	}
 
 	/**
@@ -358,7 +358,7 @@ public class N4JSGenerateImmediatelyBuilderState extends ClusteringBuilderState 
 	}
 
 	private ExternalLibraryWorkspace getExternalLibraryWorkspace() {
-		final Injector injector = N4JSActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
+		final Injector injector = N4jsActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
 		return injector.getInstance(ExternalLibraryWorkspace.class);
 	}
 
