@@ -10,7 +10,7 @@
  */
 package eu.numberfour.n4js.ui.building;
 
-import static eu.numberfour.n4js.ui.internal.N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+import static eu.numberfour.n4js.ui.internal.N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IResourceDelta;
@@ -25,7 +25,7 @@ import org.eclipse.xtext.builder.impl.XtextBuilder;
 import com.google.inject.Inject;
 
 import eu.numberfour.n4js.ui.building.BuilderStateLogger.BuilderState;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.internal.ProjectDescriptionLoadListener;
 
 /**
@@ -87,7 +87,7 @@ public class N4JSBuildTypeTrackingBuilder extends XtextBuilder {
 	}
 
 	private void updateProjectReferencesIfNecessary() {
-		final ProjectDescriptionLoadListener loadListener = N4JSActivator.getInstance()
+		final ProjectDescriptionLoadListener loadListener = N4jsActivator.getInstance()
 				.getInjector(EU_NUMBERFOUR_N4JS_N4JS)
 				.getInstance(ProjectDescriptionLoadListener.class);
 		loadListener.updateProjectReferencesIfNecessary(getProject());

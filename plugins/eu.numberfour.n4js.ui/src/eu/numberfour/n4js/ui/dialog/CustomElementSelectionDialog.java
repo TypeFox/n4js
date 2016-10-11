@@ -33,7 +33,7 @@ import org.eclipse.ui.dialogs.SelectionStatusDialog;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.wizard.workspace.SuffixText;
 
 /**
@@ -212,10 +212,10 @@ public abstract class CustomElementSelectionDialog extends SelectionStatusDialog
 	 */
 	protected void updateError(String errorMessage) {
 		if (errorMessage != null) {
-			updateStatus(new Status(IStatus.ERROR, N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS, errorMessage));
+			updateStatus(new Status(IStatus.ERROR, N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS, errorMessage));
 		} else {
 			// Explicitly set empty message ok status here
-			updateStatus(new Status(IStatus.OK, N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS, ""));
+			updateStatus(new Status(IStatus.OK, N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS, ""));
 		}
 	}
 

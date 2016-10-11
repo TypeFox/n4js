@@ -25,13 +25,13 @@ import com.google.inject.ProvisionException;
 
 import eu.numberfour.n4js.generator.common.CompilerDescriptor;
 import eu.numberfour.n4js.generator.common.IComposedGenerator;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  */
 public class ComposedGeneratorRegistry {
 	/** see also {@link ISharedStateContributionRegistry} as a possible alternative */
-	private static String EXTENSION_POINT = N4JSActivator.getInstance().getBundle().getSymbolicName()
+	private static String EXTENSION_POINT = N4jsActivator.getInstance().getBundle().getSymbolicName()
 			+ ".composedgenerator";
 	private static final Logger LOGGER = Logger.getLogger(BuildInstruction.class);
 

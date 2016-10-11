@@ -61,7 +61,7 @@ import eu.numberfour.n4js.n4mf.ProjectType;
 import eu.numberfour.n4js.n4mf.SourceFragment;
 import eu.numberfour.n4js.n4mf.SourceFragmentType;
 import eu.numberfour.n4js.ui.editor.N4JSDirtyStateEditorSupport;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  */
@@ -270,7 +270,7 @@ public class ProjectUtils {
 	}
 
 	private static ResourceSet createResourceSet(IProject project) {
-		return N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS)
+		return N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS)
 				.getInstance(IResourceSetProvider.class).get(project);
 	}
 

@@ -21,7 +21,7 @@ import org.osgi.service.prefs.Preferences;
 import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.utils.Diff;
 
 /**
@@ -32,7 +32,7 @@ public interface WorkingSetManager extends Comparator<WorkingSet>, MementoAware 
 	/**
 	 * The unique ID of the {@code workingSetManager} extension point.
 	 */
-	String EXTENSION_POINT_ID = N4JSActivator.getInstance().getBundle().getSymbolicName()
+	String EXTENSION_POINT_ID = N4jsActivator.getInstance().getBundle().getSymbolicName()
 			+ "." + Strings.toFirstLower(WorkingSetManager.class.getSimpleName());
 
 	/**

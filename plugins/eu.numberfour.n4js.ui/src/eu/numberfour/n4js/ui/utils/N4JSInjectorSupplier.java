@@ -10,11 +10,11 @@
  */
 package eu.numberfour.n4js.ui.utils;
 
-import static eu.numberfour.n4js.ui.internal.N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+import static eu.numberfour.n4js.ui.internal.N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 
 import com.google.inject.Injector;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.utils.injector.InjectorSupplier;
 
 /**
@@ -24,7 +24,7 @@ public class N4JSInjectorSupplier implements InjectorSupplier {
 
 	@Override
 	public Injector get() {
-		return N4JSActivator.getInstance().getInjector(getInjectorId());
+		return N4jsActivator.getInstance().getInjector(getInjectorId());
 	}
 
 	@Override

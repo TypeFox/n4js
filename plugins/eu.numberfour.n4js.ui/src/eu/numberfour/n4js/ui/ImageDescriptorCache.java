@@ -27,7 +27,7 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 import eu.numberfour.n4js.n4mf.ProjectType;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Cache for {@link ImageDescriptor image descriptor}s.
@@ -37,7 +37,7 @@ public enum ImageDescriptorCache {
 	/** The shared singleton cache for {@link ImageDescriptor image descriptor}s. */
 	INSTANCE;
 
-	private static final String PLUGIN_ID = N4JSActivator.getInstance().getBundle().getSymbolicName();
+	private static final String PLUGIN_ID = N4jsActivator.getInstance().getBundle().getSymbolicName();
 	private static final String ICON_FOLDER = "icons";
 
 	/**
@@ -166,7 +166,7 @@ public enum ImageDescriptorCache {
 	}
 
 	private synchronized Optional<ImageDescriptor> getImageDescriptor(final ImageRef ref) {
-		final N4JSActivator activator = N4JSActivator.getInstance();
+		final N4jsActivator activator = N4jsActivator.getInstance();
 		if (null == activator) {
 			return absent();
 		}
