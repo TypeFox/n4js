@@ -266,7 +266,6 @@ public class N4JSRuntimeModule extends eu.numberfour.n4js.AbstractN4JSRuntimeMod
 	 * my/pack/A/A as well as my/pack/A if the resource name is A. In this delegate later the import of the built in
 	 * types should be made.
 	 */
-	@Override
 	public void configureIScopeProviderDelegate(Binder binder) {
 		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class)
 				.annotatedWith(
