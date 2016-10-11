@@ -13,10 +13,10 @@ package eu.numberfour.n4js.ui.labeling.helper
 import com.google.inject.Inject
 import eu.numberfour.n4js.resource.N4JSCache
 import eu.numberfour.n4js.resource.N4JSResource
-import eu.numberfour.n4js.ui.internal.N4JSActivator
-import eu.numberfour.n4js.ui.labeling.N4JSLabelProvider
 import eu.numberfour.n4js.ts.types.SyntaxRelatedTElement
 import eu.numberfour.n4js.ts.types.TypeAccessModifier
+import eu.numberfour.n4js.ui.internal.N4jsActivator
+import eu.numberfour.n4js.ui.labeling.N4JSLabelProvider
 import java.util.List
 import java.util.Optional
 import java.util.Set
@@ -334,7 +334,7 @@ class ImageDescriptionHelper {
 	def ImageDescriptor createSimpleImageDescriptor(String imageFileName) {
 		if(imageFileName !== null) {
 			val existingImageDescriptor = labelProvider.asImageDescriptor(imageFileName)
-			existingImageDescriptor ?: N4JSActivator.imageDescriptorFromPlugin(PLUGIN_ID, "icons/" + imageFileName)
+			existingImageDescriptor ?: N4jsActivator.imageDescriptorFromPlugin(PLUGIN_ID, "icons/" + imageFileName)
 		} else {
 			N4JSLabelProvider.getDefaultImageDescriptor
 		}

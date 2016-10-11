@@ -11,7 +11,7 @@
 package eu.numberfour.n4js.tests.autoedit
 
 import com.google.common.base.Charsets
-import eu.numberfour.n4js.ui.internal.N4JSActivator
+import eu.numberfour.n4js.ui.internal.N4jsActivator
 import org.eclipse.core.resources.IEncodedStorage
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.Path
@@ -71,7 +71,7 @@ class AutoEditPluginUITest extends AbstractCStyleLanguageAutoEditTest {
 	}
 
 	override protected String getEditorId() {
-		return N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS
+		return N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS
 	}
 
 	override protected String getFileExtension() {

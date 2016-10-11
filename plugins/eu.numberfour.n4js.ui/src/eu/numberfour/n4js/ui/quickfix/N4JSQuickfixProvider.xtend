@@ -38,7 +38,7 @@ import eu.numberfour.n4js.ts.types.Type
 import eu.numberfour.n4js.ui.binaries.IllegalBinaryStateDialog
 import eu.numberfour.n4js.ui.changes.IChange
 import eu.numberfour.n4js.ui.changes.SemanticChangeProvider
-import eu.numberfour.n4js.ui.internal.N4JSActivator
+import eu.numberfour.n4js.ui.internal.N4jsActivator
 import eu.numberfour.n4js.ui.labeling.helper.ImageNames
 import eu.numberfour.n4js.ui.quickfix.TopLevelVisibilityFixProvider.TopLevelVisibilityFix
 import eu.numberfour.n4js.ui.utils.ImportUtil
@@ -626,7 +626,7 @@ class N4JSQuickfixProvider extends AbstractN4JSQuickfixProvider {
 				if (null !== illegalBinaryExcRef.get) {
 					new IllegalBinaryStateDialog(illegalBinaryExcRef.get).open;
 				} else if (null !== errorStatusRef.get) {
-					N4JSActivator.getInstance().getLog().log(errorStatusRef.get());
+					N4jsActivator.getInstance().getLog().log(errorStatusRef.get());
 					UIUtils.display.asyncExec([
 						openError(
 							UIUtils.shell,

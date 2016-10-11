@@ -92,7 +92,7 @@ import eu.numberfour.n4js.preferences.ExternalLibraryPreferenceStore;
 import eu.numberfour.n4js.projectModel.IN4JSProject;
 import eu.numberfour.n4js.ui.ImageDescriptorCache.ImageRef;
 import eu.numberfour.n4js.ui.binaries.IllegalBinaryStateDialog;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.utils.UIUtils;
 import eu.numberfour.n4js.ui.viewer.TreeViewerBuilder;
 import eu.numberfour.n4js.utils.Arrays2;
@@ -442,7 +442,7 @@ public class ExternalLibraryPreferencePage extends PreferencePage implements IWo
 					if (null != illegalBinaryExcRef.get()) {
 						new IllegalBinaryStateDialog(illegalBinaryExcRef.get()).open();
 					} else if (null != errorStatusRef.get()) {
-						N4JSActivator.getInstance().getLog().log(errorStatusRef.get());
+						N4jsActivator.getInstance().getLog().log(errorStatusRef.get());
 						getDisplay().asyncExec(() -> openError(
 								getShell(),
 								"npm Install Failed",

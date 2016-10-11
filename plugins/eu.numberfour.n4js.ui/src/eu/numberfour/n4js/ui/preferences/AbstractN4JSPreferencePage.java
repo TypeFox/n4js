@@ -65,7 +65,7 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 import eu.numberfour.n4js.generator.common.CompilerProperties;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.utils.ComponentDescriptor;
 import eu.numberfour.n4js.utils.IComponentProperties;
 
@@ -330,9 +330,9 @@ public abstract class AbstractN4JSPreferencePage<DESCR_TYPE extends ComponentDes
 				((IPersistentPreferenceStore) getPreferenceStore()).save();
 			}
 		} catch (IOException e) {
-			IStatus status = new Status(IStatus.ERROR, N4JSActivator.getInstance().getBundle().getSymbolicName(),
+			IStatus status = new Status(IStatus.ERROR, N4jsActivator.getInstance().getBundle().getSymbolicName(),
 					"Unexpected internal error: ", e); //$NON-NLS-1$
-			N4JSActivator.getInstance().getLog().log(status);
+			N4jsActivator.getInstance().getLog().log(status);
 		}
 	}
 

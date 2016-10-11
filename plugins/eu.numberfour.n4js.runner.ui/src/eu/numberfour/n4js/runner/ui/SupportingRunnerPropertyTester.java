@@ -39,7 +39,7 @@ import eu.numberfour.n4js.runner.extension.IRunnerDescriptor;
 import eu.numberfour.n4js.runner.extension.RunnerRegistry;
 import eu.numberfour.n4js.runner.extension.RuntimeEnvironment;
 import eu.numberfour.n4js.ui.handler.GeneratedJsFileLocator;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Check if given receiver is supported by registered runners.
@@ -68,7 +68,7 @@ public class SupportingRunnerPropertyTester extends PropertyTester {
 	/** constructor will take care of injecting internal fields */
 	public SupportingRunnerPropertyTester() {
 		/* get Guice injector configured with all n4js stuff */
-		N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS).injectMembers(this);
+		N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS).injectMembers(this);
 	}
 
 	/**

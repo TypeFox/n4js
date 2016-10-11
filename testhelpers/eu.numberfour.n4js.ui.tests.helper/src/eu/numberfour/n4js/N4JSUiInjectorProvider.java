@@ -19,7 +19,7 @@ public class N4JSUiInjectorProvider implements IInjectorProvider {
 
 	@Override
 	public Injector getInjector() {
-		return eu.numberfour.n4js.ui.internal.N4JSActivator.getInstance()
+		return eu.numberfour.n4js.ui.internal.N4jsActivator.getInstance()
 				.getInjector("eu.numberfour.n4js.N4JS");
 	}
 

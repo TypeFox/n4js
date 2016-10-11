@@ -18,7 +18,7 @@ import com.google.inject.Injector;
 import com.google.inject.Singleton;
 
 import eu.numberfour.n4js.typesystem.N4JSTypeSystem;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.utils.N4JSGuiceUIPlugin;
 import eu.numberfour.n4js.utils.Arrays2;
 
@@ -44,8 +44,8 @@ public class GH_180_CheckInjectedSharedSingletons_PluginUITest extends AbstractI
 		assertTrue(testedType.getSimpleName() + " is not annotated with " + Singleton.class.getName() + ".",
 				!Arrays2.isEmpty(singletons));
 
-		final String injectorId = N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
-		final Injector parentInjector = N4JSActivator.getInstance().getInjector(injectorId);
+		final String injectorId = N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
+		final Injector parentInjector = N4jsActivator.getInstance().getInjector(injectorId);
 		final MockUIPlugin mockBundle = new MockUIPlugin();
 
 		try {

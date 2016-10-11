@@ -10,7 +10,7 @@
  */
 package eu.numberfour.n4js.ui.internal;
 
-import static eu.numberfour.n4js.ui.internal.N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+import static eu.numberfour.n4js.ui.internal.N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 import static org.eclipse.core.runtime.Status.OK_STATUS;
 
 import java.lang.reflect.InvocationTargetException;
@@ -97,7 +97,7 @@ public class N4JSExternalLibraryResourceDescriptionsPersisterContribution
 
 	@Override
 	public Injector getInjector() {
-		return N4JSActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
+		return N4jsActivator.getInstance().getInjector(EU_NUMBERFOUR_N4JS_N4JS);
 	}
 
 }

@@ -53,7 +53,7 @@ import com.google.inject.Injector;
 import eu.numberfour.n4js.N4JSUiInjectorProvider;
 import eu.numberfour.n4js.tests.util.ProjectUtils;
 import eu.numberfour.n4js.ui.building.ResourceDescriptionWithoutModuleUserData;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * @author Sven Efftinge - Initial contribution and API
@@ -238,7 +238,7 @@ public abstract class AbstractBuilderTest extends Assert implements IResourceDes
 
 	/***/
 	public <T> T getInstance(Class<T> type) {
-		Injector injector = N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+		Injector injector = N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 		return injector.getInstance(type);
 	}
 
