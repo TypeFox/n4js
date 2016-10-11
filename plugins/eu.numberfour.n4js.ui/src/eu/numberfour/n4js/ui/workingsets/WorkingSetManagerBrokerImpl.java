@@ -64,7 +64,7 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.utils.UIUtils;
 import eu.numberfour.n4js.ui.workingsets.WorkingSetManagerStateChangedListener.WorkingSetManagerChangeEvent;
 import eu.numberfour.n4js.utils.Arrays2;
@@ -116,7 +116,7 @@ public class WorkingSetManagerBrokerImpl implements WorkingSetManagerBroker {
 		workingSetManagerStateChangeListeners = newHashSet();
 		restoreState(new NullProgressMonitor());
 		if (EMFPlugin.IS_ECLIPSE_RUNNING) {
-			final String pluginId = N4JSActivator.getInstance().getBundle().getSymbolicName();
+			final String pluginId = N4jsActivator.getInstance().getBundle().getSymbolicName();
 			final IWorkspace workspace = ResourcesPlugin.getWorkspace();
 			try {
 				workspace.addSaveParticipant(pluginId, new SaveParticipantAdapter() {

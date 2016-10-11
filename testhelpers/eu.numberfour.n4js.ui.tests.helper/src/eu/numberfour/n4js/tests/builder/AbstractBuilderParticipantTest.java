@@ -58,7 +58,7 @@ import com.google.inject.Injector;
 import eu.numberfour.n4js.n4mf.ProjectDescription;
 import eu.numberfour.n4js.n4mf.ProjectType;
 import eu.numberfour.n4js.tests.util.ProjectUtils;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  */
@@ -68,7 +68,7 @@ public abstract class AbstractBuilderParticipantTest extends AbstractBuilderTest
 
 	/***/
 	protected Injector getInjector() {
-		final Injector injector = N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+		final Injector injector = N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 		return injector;
 	}
 
@@ -313,7 +313,7 @@ public abstract class AbstractBuilderParticipantTest extends AbstractBuilderTest
 
 	/***/
 	protected String getEditorId() {
-		return N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS;
+		return N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS;
 	}
 
 	/** Returns with the absolute URI of the resource loaded from the current plug-in. */

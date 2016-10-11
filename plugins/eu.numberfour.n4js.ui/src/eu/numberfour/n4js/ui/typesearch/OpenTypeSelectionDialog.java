@@ -61,7 +61,7 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.Ordering;
 import com.google.inject.Inject;
 
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.labeling.N4JSLabelProvider;
 import eu.numberfour.n4js.ui.projectModel.IN4JSEclipseCore;
 import eu.numberfour.n4js.ui.projectModel.IN4JSEclipseProject;
@@ -159,9 +159,9 @@ public class OpenTypeSelectionDialog extends FilteredItemsSelectionDialog {
 
 	@Override
 	protected IDialogSettings getDialogSettings() {
-		IDialogSettings settings = N4JSActivator.getInstance().getDialogSettings().getSection(DIALOG_SETTINGS_ID);
+		IDialogSettings settings = N4jsActivator.getInstance().getDialogSettings().getSection(DIALOG_SETTINGS_ID);
 		if (null == settings) {
-			settings = N4JSActivator.getInstance().getDialogSettings().addNewSection(DIALOG_SETTINGS_ID);
+			settings = N4jsActivator.getInstance().getDialogSettings().addNewSection(DIALOG_SETTINGS_ID);
 		}
 		return settings;
 	}

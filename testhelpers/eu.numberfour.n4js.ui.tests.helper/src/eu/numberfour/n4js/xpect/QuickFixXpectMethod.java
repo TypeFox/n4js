@@ -62,7 +62,7 @@ import com.google.inject.Inject;
 
 import eu.numberfour.n4js.runner.SystemLoaderInfo;
 import eu.numberfour.n4js.tests.util.EditorsUtil;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.xpect.config.Config;
 import eu.numberfour.n4js.xpect.config.VarDef;
 import eu.numberfour.n4js.xpect.config.XpEnvironmentData;
@@ -189,7 +189,7 @@ public class QuickFixXpectMethod {
 
 			// obtain new text from editor and reparse it into the resource, otherwise the resource is outdated.
 			// necessary if the resource is further used in compilation after this QF-Application.
-			editor = EditorsUtil.openXtextEditor(targetResourceUri, N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+			editor = EditorsUtil.openXtextEditor(targetResourceUri, N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 			assertTrue("No editor for provided resource " + targetResourceUri.path(), editor.isPresent());
 
 			String textAfterApplication = editor.get().getDocument().get();

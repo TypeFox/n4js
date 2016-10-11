@@ -43,7 +43,7 @@ import org.junit.BeforeClass;
 import com.google.inject.Injector;
 
 import eu.numberfour.n4js.tests.util.ProjectUtils;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Abstract base class for CA tests. Uses a shared project for the entire test class.
@@ -134,7 +134,7 @@ public abstract class AbstractN4JSContentAssistTest extends Assert implements Re
 	}
 
 	private Injector getInjector() {
-		return N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS);
+		return N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS);
 	}
 
 	private IProject getJSProject() {

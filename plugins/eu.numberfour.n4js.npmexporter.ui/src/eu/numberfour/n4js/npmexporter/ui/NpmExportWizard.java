@@ -65,7 +65,7 @@ import eu.numberfour.n4js.npmexporter.NpmExporter;
 import eu.numberfour.n4js.npmexporter.NpmExporter.MergeResult;
 import eu.numberfour.n4js.npmexporter.validation.Diagnostician;
 import eu.numberfour.n4js.projectModel.IN4JSProject;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.projectModel.IN4JSEclipseCore;
 import eu.numberfour.n4js.ui.projectModel.IN4JSEclipseProject;
 
@@ -261,7 +261,7 @@ public class NpmExportWizard extends Wizard implements IExportWizard {
 			e.printStackTrace();
 
 			Status s = new Status(ERROR, NpmExporterActivator.PLUGIN_ID, "Error occured during export.", e);
-			N4JSActivator.getInstance().getLog().log(s);
+			N4jsActivator.getInstance().getLog().log(s);
 
 			return false;
 		} catch (InvocationTargetException e) {

@@ -17,7 +17,7 @@ import org.eclipse.ui.IWorkbench;
 import com.google.inject.Inject;
 
 import eu.numberfour.n4js.ui.ImageDescriptorCache.ImageRef;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 import eu.numberfour.n4js.ui.wizard.classifiers.N4JSNewClassifierWizard;
 import eu.numberfour.n4js.ui.wizard.generator.WorkspaceWizardGenerator;
 
@@ -45,7 +45,7 @@ public class N4JSNewClassWizard extends N4JSNewClassifierWizard<N4JSClassWizardM
 
 	@Override
 	public IDialogSettings getDialogSettings() {
-		return N4JSActivator.getInstance().getDialogSettings();
+		return N4jsActivator.getInstance().getDialogSettings();
 	}
 
 	@Override
