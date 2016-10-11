@@ -44,7 +44,7 @@ import com.google.inject.Injector;
 import eu.numberfour.n4js.generator.common.GeneratorException;
 import eu.numberfour.n4js.generator.common.IComposedGenerator;
 import eu.numberfour.n4js.generator.ui.GeneratorMarkerSupport;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * A {@link IBuildParticipantInstruction instruction} for a build. This is used to support clustering in the generator
@@ -201,10 +201,10 @@ public class BuildInstruction extends AbstractBuildParticipantInstruction {
 				}
 			} catch (RuntimeException e) {
 				if (e instanceof GeneratorException) {
-					N4JSActivator
+					N4jsActivator
 							.getInstance()
 							.getLog()
-							.log(new Status(IStatus.ERROR, N4JSActivator.getInstance().getBundle().getSymbolicName(), e
+							.log(new Status(IStatus.ERROR, N4jsActivator.getInstance().getBundle().getSymbolicName(), e
 									.getMessage(), e.getCause()));
 				}
 				if (e.getCause() instanceof CoreException) {

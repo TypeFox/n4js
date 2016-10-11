@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.URI;
 import com.google.inject.Inject;
 
 import eu.numberfour.n4js.tester.TestDiscoveryHelper;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * A {@link PropertyTester} that checks if the receiver (usually a selected element in the workbench) contains N4JS
@@ -36,7 +36,7 @@ public class IsTestableLocationPropertyTester extends PropertyTester {
 	/** constructor will take care of injecting internal fields */
 	public IsTestableLocationPropertyTester() {
 		// copied from eu.numberfour.n4js.runner.ui.SupportingRunnerPropertyTester.SupportingRunnerPropertyTester():
-		N4JSActivator.getInstance().getInjector(N4JSActivator.EU_NUMBERFOUR_N4JS_N4JS).injectMembers(this);
+		N4jsActivator.getInstance().getInjector(N4jsActivator.EU_NUMBERFOUR_N4JS_N4JS).injectMembers(this);
 		// TODO use executable extension factory instead
 	}
 
