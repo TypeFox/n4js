@@ -9,7 +9,6 @@ import com.google.inject.name.Names;
 import eu.numberfour.n4js.ui.contentassist.N4JSProposalProvider;
 import eu.numberfour.n4js.ui.contentassist.antlr.N4JSParser;
 import eu.numberfour.n4js.ui.contentassist.antlr.PartialN4JSContentAssistParser;
-import eu.numberfour.n4js.ui.contentassist.antlr.lexer.InternalN4JSLexer;
 import eu.numberfour.n4js.ui.labeling.N4JSDescriptionLabelProvider;
 import eu.numberfour.n4js.ui.labeling.N4JSLabelProvider;
 import eu.numberfour.n4js.ui.outline.N4JSOutlineTreeProvider;
@@ -23,11 +22,8 @@ import org.eclipse.xtext.builder.clustering.CurrentDescriptions;
 import org.eclipse.xtext.builder.impl.PersistentDataAwareDirtyResource;
 import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.generator.IContextualOutputConfigurationProvider;
-import org.eclipse.xtext.ide.LexerIdeBindings;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
-import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.ide.editor.partialEditing.IPartialEditingContentAssistParser;
-import org.eclipse.xtext.parser.antlr.LexerProvider;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.containers.IAllContainersState;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
@@ -174,21 +170,19 @@ public abstract class AbstractN4JSUiModule extends DefaultUiModule {
 		return ParserBasedContentAssistContextFactory.class;
 	}
 	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.ca.ContentAssistParserGeneratorFragment
 	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
 		return N4JSParser.class;
 	}
 	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.ca.ContentAssistParserGeneratorFragment
 	public void configureContentAssistLexerProvider(Binder binder) {
-		binder.bind(InternalN4JSLexer.class).toProvider(LexerProvider.create(InternalN4JSLexer.class));
+		binder.bind(eu.numberfour.n4js.ui.contentassist.antlr.lexer.InternalN4JSLexer.class).toProvider(org.eclipse.xtext.parser.antlr.LexerProvider.create(eu.numberfour.n4js.ui.contentassist.antlr.lexer.InternalN4JSLexer.class));
 	}
 	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.ca.ContentAssistParserGeneratorFragment
 	public void configureContentAssistLexer(Binder binder) {
-		binder.bind(Lexer.class)
-		.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
-		.to(InternalN4JSLexer.class);
+		binder.bind(org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ide.LexerIdeBindings.CONTENT_ASSIST)).to(eu.numberfour.n4js.ui.contentassist.antlr.lexer.InternalN4JSLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
