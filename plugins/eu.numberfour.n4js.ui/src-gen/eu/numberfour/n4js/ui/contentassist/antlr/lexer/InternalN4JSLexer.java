@@ -1,5 +1,5 @@
 package eu.numberfour.n4js.ui.contentassist.antlr.lexer;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
