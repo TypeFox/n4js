@@ -34,10 +34,13 @@ public class TemplateLiteralDisambiguationInjector implements CodeIntoGrammarInj
 				"protected void setInTemplateSegment() {}\n" +
 						"protected boolean forcedRewind(int marker) {");
 		result = replace(result,
-				"ruleTemplateExpressionEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] \n" +
-						"    @init { enterRule(); ",
-				"ruleTemplateExpressionEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] \n" +
-						"    @init { enterRule(); setInTemplateSegment();");
+				"ruleTemplateExpressionEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]\n" +
+						"@init {\n" +
+						"	enterRule();\n",
+				"ruleTemplateExpressionEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]\n" +
+						"@init {\n" +
+						"	enterRule();\n" +
+						"	setInTemplateSegment();");
 		return result;
 	}
 
