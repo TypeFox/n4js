@@ -26,7 +26,7 @@ Contributors:
 
 	<build>
 		<plugins>
-			<plugin>
+<!-- 		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<configuration>
@@ -39,7 +39,7 @@ Contributors:
 						</fileset>
 					</filesets>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -58,10 +58,10 @@ Contributors:
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+<!-- 		<plugin>
 				<groupId>org.eclipse.xtext</groupId>
 				<artifactId>xtext-maven-plugin</artifactId>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
