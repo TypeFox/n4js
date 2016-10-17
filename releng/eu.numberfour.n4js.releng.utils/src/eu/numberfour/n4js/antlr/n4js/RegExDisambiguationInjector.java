@@ -34,10 +34,13 @@ public class RegExDisambiguationInjector implements CodeIntoGrammarInjector {
 				"protected void setInRegularExpression() {}\n" +
 						"protected boolean forcedRewind(int marker) {");
 		result = replace(result,
-				"ruleREGEX_LITERAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] \n" +
-						"    @init { enterRule(); ",
-				"ruleREGEX_LITERAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] \n" +
-						"    @init { enterRule(); setInRegularExpression();");
+				"ruleREGEX_LITERAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]\n" +
+						"@init {\n" +
+						"	enterRule();",
+				"ruleREGEX_LITERAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]\n" +
+						"@init {\n" +
+						"	enterRule();\n" +
+						"	setInRegularExpression();");
 		return result;
 	}
 
@@ -50,7 +53,6 @@ public class RegExDisambiguationInjector implements CodeIntoGrammarInjector {
 	private String addInRegularExpression(String grammarContent) {
 		String replacement = "}\n" +
 				"@members {\n\n" +
-				"" +
 				"protected boolean inRegularExpression = false;\n" +
 				"}\n";
 
