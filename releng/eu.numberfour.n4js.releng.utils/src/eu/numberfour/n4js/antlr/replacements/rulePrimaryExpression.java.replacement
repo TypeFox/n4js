@@ -1,4 +1,4 @@
-public final EObject rulePrimaryExpression() throws RecognitionException {
+    public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
         EObject this_ThisLiteral_0 = null;
@@ -28,8 +28,9 @@ public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject this_TemplateLiteral_12 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
             {
             int **alt1**=13;
@@ -37,7 +38,7 @@ public final EObject rulePrimaryExpression() throws RecognitionException {
             switch (**alt1**) {
                 case 1 :
 _________________________________REPLACE_WITH_________________________________
-public final EObject rulePrimaryExpression() throws RecognitionException {
+    public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
         EObject this_ThisLiteral_0 = null;
@@ -65,7 +66,9 @@ public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject this_N4ClassExpression_11 = null;
 
         EObject this_TemplateLiteral_12 = null;
-         enterRule(); 
+        
+        	enterRule();
+
         try { 
         	{
             int **alt1**=13;

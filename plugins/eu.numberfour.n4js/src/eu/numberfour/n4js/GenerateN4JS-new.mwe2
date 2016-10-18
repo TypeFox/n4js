@@ -55,7 +55,7 @@ Workflow {
 			
 			fragment = resourceFactory.ResourceFactoryFragment2 {}
 			
-			fragment = parser.antlr.XtextAntlrGeneratorFragment2 {
+			fragment = antlr.N4JSAntlrGeneratorFragment2 {
 				combinedGrammar = false
 				debugGrammar = true
 				options = auto-inject {
@@ -66,6 +66,40 @@ Workflow {
 				antlrParam = "30000"
 			}
 			
+//			fragment = antlr.N4JSAntlrGeneratorComparisonFragment {
+//				registerExtensionAdvice = "eu::numberfour::n4js::antlr::UnicodeAwareKeywords"
+//				failOnError = false
+//				
+//				options = auto-inject {
+//					keptBitSetName = "FOLLOW_ruleExpression_in_ruleExpressionStatement"
+//					keptBitSetsPattern = "FOLLOW_norm1_Expression_in_ruleExpressionStatement.*"
+//				}
+//			}
+			
+////			fragment = org.eclipse.xtext.generator.adapter.FragmentAdapter {
+////				// The antlr parser generator fragment.
+////				fragment = eu.numberfour.n4js.antlr.AntlrGeneratorWithCustomKeywordLogic auto-inject {
+////					antlrTool = eu.numberfour.n4js.antlr.AntlrToolFacadeWithInjectedCode {
+////						step = eu.numberfour.n4js.antlr.n4js.AutomaticSemicolonInjector {}
+////						step = eu.numberfour.n4js.antlr.n4js.RegExDisambiguationInjector auto-inject {}
+////						step = eu.numberfour.n4js.antlr.n4js.TemplateLiteralDisambiguationInjector auto-inject {}
+////						step = eu.numberfour.n4js.antlr.n4js.NoLineTerminatorHandlingInjector auto-inject {}
+////					}
+////					options = auto-inject {
+////						keptBitSetName = "FOLLOW_ruleExpression_in_ruleExpressionStatement"
+////						keptBitSetsPattern = "FOLLOW_norm1_Expression_in_ruleExpressionStatement.*"
+////					}
+////					antlrParam = "-Xconversiontimeout"
+////					antlrParam = "30000"
+////				}
+////			}
+//			
+//			fragment = org.eclipse.xtext.generator.adapter.FragmentAdapter {
+//				fragment = eu.numberfour.n4js.antlr.delimiters.DebugAntlrGeneratorFragment auto-inject {
+//					options = auto-inject {}
+//				}
+//			}
+//			
 			// Xtend-based API for validation
 			fragment = validation.ValidatorFragment2 auto-inject {
 				inheritImplementation = false
@@ -111,6 +145,15 @@ Workflow {
 			fragment = ui.contentAssist.ContentAssistFragment2 {
 				generateXtendStub = true
 			}
+
+//			// generates a more lightweight Antlr parser and lexer tailored for content assist
+//			fragment = org.eclipse.xtext.generator.adapter.FragmentAdapter  {
+//				fragment = eu.numberfour.n4js.antlr.ContentAssistParserGeneratorFragmentWithUniCodeChars auto-inject {
+//					antlrParam = "-Xconversiontimeout"
+//					antlrParam = "30000"
+//					options = auto-inject {}
+//				}
+//			}
 			
 			// rename refactoring
 			fragment = ui.refactoring.RefactorElementNameFragment2 {}
