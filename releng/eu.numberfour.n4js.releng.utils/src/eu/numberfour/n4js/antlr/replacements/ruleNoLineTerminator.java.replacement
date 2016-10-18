@@ -1,10 +1,11 @@
- public final EObject ruleNoLineTerminator(EObject in_current) throws RecognitionException {
+    public final EObject ruleNoLineTerminator(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
         Token this_NO_LINE_TERMINATOR_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
             {
             int **alt1**=2;
@@ -18,9 +19,9 @@
                     {
                     this_NO_LINE_TERMINATOR_0=(Token)match(input,RULE_NO_LINE_TERMINATOR,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                          newLeafNode(this_NO_LINE_TERMINATOR_0, grammarAccess.getNoLineTerminatorAccess().getNO_LINE_TERMINATORTerminalRuleCall()); 
-                          
+
+                      			newLeafNode(this_NO_LINE_TERMINATOR_0, grammarAccess.getNoLineTerminatorAccess().getNO_LINE_TERMINATORTerminalRuleCall());
+                      		
                     }
 
                     }
@@ -32,14 +33,16 @@
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-        	catch (RecognitionException re) { 
-        	    recover(input,re); 
-        	    appendSkippedTokens();
-        	}
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
         finally {
         }
         return current;
