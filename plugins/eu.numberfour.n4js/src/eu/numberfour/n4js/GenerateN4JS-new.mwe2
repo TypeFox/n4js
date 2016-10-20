@@ -145,11 +145,9 @@ Workflow {
 				}
 			}
 			
-			fragment = org.eclipse.xtext.generator.adapter.FragmentAdapter {
-				fragment = eu.numberfour.n4js.antlr.compressor.ParserCompressorFragment auto-inject {
-					grammarFile = "${runtimeProjectPath}.ui/src-gen/eu/numberfour/n4js/ui/editor/syntaxcoloring/InternalN4JSParser.java"
-					grammarFile = "${runtimeProjectPath}/src-gen/eu/numberfour/n4js/parser/antlr/internal/InternalN4JSParser.java"
-				}
+			fragment = eu.numberfour.n4js.antlr.compressor.ParserCompressorFragment2 auto-inject {
+				grammarFile = "${runtimeProjectPath}.ui/src-gen/eu/numberfour/n4js/ui/editor/syntaxcoloring/InternalN4JSParser.java"
+				grammarFile = "${runtimeProjectPath}/src-gen/eu/numberfour/n4js/parser/antlr/internal/InternalN4JSParser.java"
 			}
 		}
 	}
