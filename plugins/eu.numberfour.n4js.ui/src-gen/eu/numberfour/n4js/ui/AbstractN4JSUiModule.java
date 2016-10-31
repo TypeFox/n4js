@@ -92,6 +92,13 @@ public abstract class AbstractN4JSUiModule extends DefaultUiModule {
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public void configureContentAssistLexer(Binder binder) {
+		binder.bind(Lexer.class)
+			.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
+			.to(InternalN4JSLexer.class);
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
@@ -103,6 +110,21 @@ public abstract class AbstractN4JSUiModule extends DefaultUiModule {
 		binder.bind(ITokenDefProvider.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
 			.to(AntlrTokenDefProvider.class);
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public Class<? extends ContentAssistContext.Factory> bindContentAssistContext$Factory() {
+		return DelegatingContentAssistContextFactory.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
+		return N4JSParser.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public void configureContentAssistLexerProvider(Binder binder) {
+		binder.bind(InternalN4JSLexer.class).toProvider(LexerProvider.create(InternalN4JSLexer.class));
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.SimpleNamesFragment2
@@ -135,11 +157,6 @@ public abstract class AbstractN4JSUiModule extends DefaultUiModule {
 		return PersistentDataAwareDirtyResource.class;
 	}
 	
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public org.eclipse.core.resources.IWorkspaceRoot bindIWorkspaceRootToInstance() {
-		return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot();
-	}
-
 	// contributed by org.eclipse.xtext.xtext.generator.formatting.Formatter2Fragment2
 	public Class<? extends IContentFormatterFactory> bindIContentFormatterFactory() {
 		return ContentFormatterFactory.class;
@@ -173,28 +190,6 @@ public abstract class AbstractN4JSUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.ui.contentAssist.ContentAssistFragment2
 	public Class<? extends IContentProposalProvider> bindIContentProposalProvider() {
 		return N4JSProposalProvider.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends ContentAssistContext.Factory> bindContentAssistContext$Factory() {
-		return DelegatingContentAssistContextFactory.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
-		return N4JSParser.class;
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureContentAssistLexerProvider(Binder binder) {
-		binder.bind(InternalN4JSLexer.class).toProvider(LexerProvider.create(InternalN4JSLexer.class));
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public void configureContentAssistLexer(Binder binder) {
-		binder.bind(Lexer.class)
-			.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
-			.to(InternalN4JSLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
