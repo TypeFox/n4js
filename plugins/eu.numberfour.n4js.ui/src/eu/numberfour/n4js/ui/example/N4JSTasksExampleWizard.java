@@ -32,7 +32,7 @@ import com.google.inject.Inject;
 import eu.numberfour.n4js.external.ExternalLibraryWorkspace;
 import eu.numberfour.n4js.external.NpmManager;
 import eu.numberfour.n4js.external.TargetPlatformInstallLocationProvider;
-import eu.numberfour.n4js.ui.internal.N4JSActivator;
+import eu.numberfour.n4js.ui.internal.N4jsActivator;
 
 /**
  * Wizard for the {@code N4JS Tasks Example} projects.
@@ -84,7 +84,7 @@ public class N4JSTasksExampleWizard extends ExampleInstallerWizard {
 				}
 			});
 		} catch (InvocationTargetException | InterruptedException e) {
-			String pluginId = N4JSActivator.getInstance().getBundle().getSymbolicName();
+			String pluginId = N4jsActivator.getInstance().getBundle().getSymbolicName();
 			IStatus status = new Status(IStatus.ERROR, pluginId, e.getCause().getMessage(), e.getCause());
 
 			ErrorDialog.openError(getShell(), "Error", e.getMessage(), status);
