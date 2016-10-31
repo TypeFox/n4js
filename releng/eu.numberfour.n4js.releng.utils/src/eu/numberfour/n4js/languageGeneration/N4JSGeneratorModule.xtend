@@ -8,11 +8,9 @@
  * Contributors:
  *   NumberFour AG - Initial API and implementation
  */
-package eu.numberfour.n4js
+package eu.numberfour.n4js.languageGeneration
 
 import com.google.inject.Binder
-import eu.numberfour.n4js.antlr.N4JSAntlrContentAssistGrammarGenerator
-import eu.numberfour.n4js.antlr.N4JSAntlrGrammarGenerator
 import org.eclipse.xtext.Grammar
 import org.eclipse.xtext.xtext.generator.DefaultGeneratorModule
 import org.eclipse.xtext.xtext.generator.XtextGeneratorNaming
