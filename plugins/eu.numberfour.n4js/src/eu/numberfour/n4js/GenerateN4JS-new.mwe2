@@ -3,6 +3,8 @@ module eu.numberfour.n4js.GenerateN4JS_new
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
+import eu.numberfour.n4js.languageGeneration.*
+
 var rootPath = ".."
 var runtimeProject = "eu.numberfour.n4js"
 var runtimeProjectPath = "${rootPath}/${runtimeProject}"

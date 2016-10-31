@@ -8,11 +8,13 @@
  * Contributors:
  *   NumberFour AG - Initial API and implementation
  */
-package eu.numberfour.n4js.antlr
+package eu.numberfour.n4js.languageGeneration
 
 import com.google.common.base.Charsets
 import com.google.common.io.Files
 import com.google.inject.Inject
+import eu.numberfour.n4js.antlr.CodeIntoGrammarInjector
+import eu.numberfour.n4js.antlr.UnicodeKeywordHelper
 import eu.numberfour.n4js.antlr.n4js.AutomaticSemicolonInjector
 import eu.numberfour.n4js.antlr.n4js.NoLineTerminatorHandlingInjector
 import eu.numberfour.n4js.antlr.n4js.RegExDisambiguationInjector

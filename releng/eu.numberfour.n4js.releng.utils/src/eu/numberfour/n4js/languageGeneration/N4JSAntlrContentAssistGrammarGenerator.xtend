@@ -8,8 +8,9 @@
  * Contributors:
  *   NumberFour AG - Initial API and implementation
  */
-package eu.numberfour.n4js.antlr
+package eu.numberfour.n4js.languageGeneration
 
+import eu.numberfour.n4js.antlr.UnicodeKeywordHelper
 import org.eclipse.xtext.xtext.generator.parser.antlr.AntlrContentAssistGrammarGenerator
 import org.eclipse.xtext.xtext.generator.parser.antlr.AntlrOptions
 

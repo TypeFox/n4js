@@ -8,11 +8,10 @@
  * Contributors:
  *   NumberFour AG - Initial API and implementation
  */
-package eu.numberfour.n4js
+package eu.numberfour.n4js.languageGeneration.n4mf
 
 import com.google.inject.Binder
-import eu.numberfour.n4js.antlr.N4JSAntlrContentAssistGrammarGenerator
-import eu.numberfour.n4js.antlr.N4JSAntlrGrammarGenerator
+import eu.numberfour.n4js.languageGeneration.N4JSAntlrContentAssistGrammarGenerator
 import org.eclipse.xtext.Grammar
 import org.eclipse.xtext.xtext.generator.DefaultGeneratorModule
 import org.eclipse.xtext.xtext.generator.XtextGeneratorNaming
@@ -22,14 +21,14 @@ import org.eclipse.xtext.xtext.generator.parser.antlr.AntlrGrammarGenerator
 /**
  * Custom bindings for the language generation run.
  */
-class N4JSGeneratorModule extends DefaultGeneratorModule {
+class N4MFGeneratorModule extends DefaultGeneratorModule {
 	
 	def configureXtextGeneratorNaming(Binder binder) {
-		binder.bind(XtextGeneratorNaming).to(N4JSGeneratorNaming)
+		binder.bind(XtextGeneratorNaming).to(N4MFGeneratorNaming)
 	}
 	
 	def configureAntlrGrammarGenerator(Binder binder) {
-		binder.bind(AntlrGrammarGenerator).to(N4JSAntlrGrammarGenerator)
+		binder.bind(AntlrGrammarGenerator).to(N4MFAntlrGrammarGenerator)
 	}
 	
 	def configureAntlrContentAssistGrammarGenerator(Binder binder) {
@@ -37,7 +36,7 @@ class N4JSGeneratorModule extends DefaultGeneratorModule {
 	}
 }
 
-class N4JSGeneratorNaming extends XtextGeneratorNaming {
+class N4MFGeneratorNaming extends XtextGeneratorNaming {
 	
 	override getGenericIdeBasePackage(Grammar grammar) {
 		super.getEclipsePluginBasePackage(grammar)

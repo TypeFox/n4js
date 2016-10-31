@@ -19,4 +19,6 @@ Export-Package: de.itemis.xcore2java,
  eu.numberfour.n4js.antlr.internal,
  eu.numberfour.n4js.antlr.n4js,
  eu.numberfour.n4js.antlr.replacements,
- eu.numberfour.n4js.antlr.syntaxcoloring
+ eu.numberfour.n4js.antlr.syntaxcoloring,
+ eu.numberfour.n4js.languageGeneration,
+ eu.numberfour.n4js.languageGeneration.n4mf
