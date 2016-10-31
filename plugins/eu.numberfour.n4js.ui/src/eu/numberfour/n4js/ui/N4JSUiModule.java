@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.text.rules.IPartitionTokenScanner;
@@ -143,6 +145,14 @@ public class N4JSUiModule extends eu.numberfour.n4js.ui.AbstractN4JSUiModule {
 	 */
 	public Class<? extends IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
 		return N4JSBuilderParticipant.class;
+	}
+
+	/**
+	 * Formerly contributed by org.eclipse.xtext.generator.generator.GeneratorFragment. Needed for some tests, like
+	 * 'EclipseArchivePluginTest', EclipseBasedInternalWorkspacePluginTest, and others.
+	 */
+	public IWorkspaceRoot bindIWorkspaceRootToInstance() {
+		return ResourcesPlugin.getWorkspace().getRoot();
 	}
 
 	/**
