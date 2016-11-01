@@ -17,12 +17,12 @@ import eu.numberfour.n4js.services.N4JSGrammarAccess
 import java.util.Collection
 import java.util.Set
 import org.eclipse.xtext.AbstractElement
+import org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElement
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils
-import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

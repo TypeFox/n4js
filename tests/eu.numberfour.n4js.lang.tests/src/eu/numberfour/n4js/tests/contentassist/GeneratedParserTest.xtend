@@ -15,9 +15,9 @@ import com.google.inject.Provider
 import eu.numberfour.n4js.ui.contentassist.antlr.N4JSParser
 import eu.numberfour.n4js.ui.contentassist.antlr.lexer.InternalN4JSLexer
 import org.antlr.runtime.CharStream
+import org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElement
 import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.parser.antlr.IUnorderedGroupHelper
-import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement
 import org.junit.Ignore
 
 /**

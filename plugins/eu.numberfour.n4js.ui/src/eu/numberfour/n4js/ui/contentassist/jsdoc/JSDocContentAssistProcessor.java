@@ -10,9 +10,6 @@
  */
 package eu.numberfour.n4js.ui.contentassist.jsdoc;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
@@ -20,13 +17,12 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.ui.editor.XtextSourceViewer;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.ParserBasedContentAssistContextFactory;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.DelegatingContentAssistContextFactory;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 
 import com.google.inject.Inject;
 
 import eu.numberfour.n4js.jsdoc.N4JSDocletParser;
-import eu.numberfour.n4js.ui.contentassist.ContentAssistContextFactory;
 
 /**
  *
@@ -36,7 +32,7 @@ import eu.numberfour.n4js.ui.contentassist.ContentAssistContextFactory;
 public class JSDocContentAssistProcessor implements IContentAssistProcessor {
 
 	@Inject
-	ParserBasedContentAssistContextFactory.StatefulFactory contentAssistContextFactory;
+	DelegatingContentAssistContextFactory.StatefulFactory contentAssistContextFactory;
 
 	@Inject
 	N4JSDocletParser docletParser;
@@ -62,13 +58,13 @@ public class JSDocContentAssistProcessor implements IContentAssistProcessor {
 	/**
 	 * Returns the context factory setting an execution pool. Actually this is a dirty hack...
 	 */
-	public ParserBasedContentAssistContextFactory.StatefulFactory getContextFactory() {
+	public DelegatingContentAssistContextFactory.StatefulFactory getContextFactory() {
 
 		// TODO hack. I have no clue why this is needed and how pool should be set.
-		if (contentAssistContextFactory instanceof ContentAssistContextFactory) {
-			ExecutorService pool = Executors.newFixedThreadPool(3);
-			((ContentAssistContextFactory) contentAssistContextFactory).setPool(pool);
-		}
+		// if (contentAssistContextFactory instanceof ContentAssistContextFactory) {
+		// ExecutorService pool = Executors.newFixedThreadPool(3);
+		// ((ContentAssistContextFactory) contentAssistContextFactory).setPool(pool);
+		// }
 
 		return contentAssistContextFactory;
 	}

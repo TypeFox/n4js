@@ -19,10 +19,10 @@ import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenSource;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.SyntaxErrorMessage;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.Iterators;
