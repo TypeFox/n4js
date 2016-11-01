@@ -16,14 +16,14 @@ import eu.numberfour.n4js.N4JSInjectorProvider
 import eu.numberfour.n4js.ui.contentassist.ContentAssistTokenTypeMapper
 import eu.numberfour.n4js.ui.contentassist.CustomN4JSParser
 import eu.numberfour.n4js.ui.contentassist.TokenSourceFactory
+import org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElement
+import org.eclipse.xtext.ide.editor.contentassist.antlr.RequiredRuleNameComputer
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.parser.antlr.IUnorderedGroupHelper
-import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement
-import org.junit.runner.RunWith
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
-import org.eclipse.xtext.ide.editor.contentassist.antlr.RequiredRuleNameComputer
+import org.junit.runner.RunWith
 
 /**
  */
