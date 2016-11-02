@@ -86,6 +86,7 @@ import eu.numberfour.n4js.ui.containers.N4JSAllContainersStateProvider;
 import eu.numberfour.n4js.ui.contentassist.ContentAssistContextFactory;
 import eu.numberfour.n4js.ui.contentassist.ContentAssistantFactory;
 import eu.numberfour.n4js.ui.contentassist.CustomN4JSParser;
+import eu.numberfour.n4js.ui.contentassist.N4JSFollowElementCalculator;
 import eu.numberfour.n4js.ui.contentassist.SimpleLastSegmentFinder;
 import eu.numberfour.n4js.ui.editor.AlwaysAddNatureCallback;
 import eu.numberfour.n4js.ui.editor.N4JSDirtyStateEditorSupport;
@@ -341,6 +342,13 @@ public class N4JSUiModule extends eu.numberfour.n4js.ui.AbstractN4JSUiModule {
 	 */
 	public Class<? extends org.eclipse.xtext.ide.editor.contentassist.antlr.ContentAssistContextFactory> bindContentAssistContextFactory() {
 		return ContentAssistContextFactory.class;
+	}
+
+	/**
+	 * Bind the customized content assist follow element calculator that drops parser rules of "bogus" language parts.
+	 */
+	public Class<? extends org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElementCalculator> bindFollowElementCalculator() {
+		return N4JSFollowElementCalculator.class;
 	}
 
 	@Override
