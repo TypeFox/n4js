@@ -28,6 +28,7 @@ import org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.generator.IOutputConfigurationProvider;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElementComputer;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 import org.eclipse.xtext.resource.SynchronizedXtextResourceSet;
@@ -87,6 +88,7 @@ import eu.numberfour.n4js.ui.contentassist.ContentAssistContextFactory;
 import eu.numberfour.n4js.ui.contentassist.ContentAssistantFactory;
 import eu.numberfour.n4js.ui.contentassist.CustomN4JSParser;
 import eu.numberfour.n4js.ui.contentassist.N4JSFollowElementCalculator;
+import eu.numberfour.n4js.ui.contentassist.PatchedFollowElementComputer;
 import eu.numberfour.n4js.ui.contentassist.SimpleLastSegmentFinder;
 import eu.numberfour.n4js.ui.editor.AlwaysAddNatureCallback;
 import eu.numberfour.n4js.ui.editor.N4JSDirtyStateEditorSupport;
@@ -349,6 +351,14 @@ public class N4JSUiModule extends eu.numberfour.n4js.ui.AbstractN4JSUiModule {
 	 */
 	public Class<? extends org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElementCalculator> bindFollowElementCalculator() {
 		return N4JSFollowElementCalculator.class;
+	}
+
+	/**
+	 * Remove this binding once the change of https://github.com/eclipse/xtext-core/pull/167 is available in the target
+	 * platform.
+	 */
+	public Class<? extends FollowElementComputer> bindFollowElementComputer() {
+		return PatchedFollowElementComputer.class;
 	}
 
 	@Override
