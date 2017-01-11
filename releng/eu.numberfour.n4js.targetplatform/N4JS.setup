@@ -295,8 +295,8 @@
         url="http://andrei.gmxhome.de/eclipse/"/>
   </setupTask>
   <setupTask
-      disabled="true"
       xsi:type="setup.p2:P2Task"
+      disabled="true"
       label="Grep Console">
     <requirement
         name="name.schedenig.eclipse.grepconsole.feature.group"/>
@@ -415,7 +415,7 @@
         <repository
             url="http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201505260349"/>
         <repository
-            url="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.10.0"/>
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201612190948/"/>
         <repository
             url="http://download.eclipse.org/technology/swtbot/releases/2.4.0"/>
         <repository
