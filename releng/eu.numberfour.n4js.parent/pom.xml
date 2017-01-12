@@ -108,7 +108,6 @@ Contributors:
 		<xtext-version>${xtend-maven-plugin.version}</xtext-version>
 		<org.eclipse.xtext.builder.standalone-version>[${xtend-maven-plugin.version}]</org.eclipse.xtext.builder.standalone-version>
 		<org.eclipse.xtext.common.types-version>[${xtend-maven-plugin.version}]</org.eclipse.xtext.common.types-version>
-		<org.eclipse.xtext.xtext-version>[${xtend-maven-plugin.version}]</org.eclipse.xtext.xtext-version>
 		<org.eclipse.xtext.xbase-version>[${xtend-maven-plugin.version}]</org.eclipse.xtext.xbase-version>
 		<org.osgi.core-version>4.3.1</org.osgi.core-version>
 		<org.eclipse.equinox.common-version>3.6.200-v20130402-1505</org.eclipse.equinox.common-version>
