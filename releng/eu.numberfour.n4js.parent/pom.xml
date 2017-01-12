@@ -89,6 +89,7 @@ Contributors:
 		<xtend-maven-plugin.version>${xtext.version}</xtend-maven-plugin.version>
 		<xtend-library.version>${xtend-maven-plugin.version}</xtend-library.version>
 		<fornax-oaw-m2-plugin.version>3.6.0</fornax-oaw-m2-plugin.version>
+		<mwe2.version>2.9.0.201605261059</mwe2.version>
 
 		<!-- java version -->
 		<java-compile-version>8.0</java-compile-version>
