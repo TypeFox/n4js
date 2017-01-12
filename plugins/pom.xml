@@ -387,6 +387,11 @@ Contributors:
 							<artifactId>eu.numberfour.n4js.releng.utils</artifactId>
 							<version>${project.version}</version>
 						</dependency>
+						<dependency>
+						    <groupId>org.eclipse.xtext</groupId>
+						    <artifactId>org.eclipse.xtext.ecore</artifactId>
+						    <version>${xtext-version}</version>
+						</dependency>
 						<!-- begin workaround for https://github.com/eclipse/xtext-xtend/issues/116#issuecomment-271916734 -->
 						<dependency>
 							<groupId>org.eclipse.jdt</groupId>
