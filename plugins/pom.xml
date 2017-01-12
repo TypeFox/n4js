@@ -387,6 +387,18 @@ Contributors:
 							<artifactId>eu.numberfour.n4js.releng.utils</artifactId>
 							<version>${project.version}</version>
 						</dependency>
+						<!-- begin workaround for https://github.com/eclipse/xtext-xtend/issues/116#issuecomment-271916734 -->
+						<dependency>
+							<groupId>org.eclipse.jdt</groupId>
+							<artifactId>org.eclipse.jdt.core</artifactId>
+							<version>3.12.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.eclipse.jdt</groupId>
+							<artifactId>org.eclipse.jdt.compiler.apt</artifactId>
+							<version>1.2.100</version>
+						</dependency>
+						<!-- end workaround for https://github.com/eclipse/xtext-xtend/issues/116#issuecomment-271916734 -->
 					</dependencies>
 				</plugin>
 			</plugins>
