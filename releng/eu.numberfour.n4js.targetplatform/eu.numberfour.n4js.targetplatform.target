@@ -38,10 +38,10 @@
       <repository location="http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201505260349"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-      <unit id="org.eclipse.xtext.junit4" version="2.11.0.v20161215-0942"/>
-      <unit id="org.eclipse.xtext.xbase" version="2.11.0.v20161215-0830"/>
-      <unit id="org.eclipse.xtext.xtext.ui" version="2.11.0.v20161215-0942"/>
-      <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201612190948/"/>
+      <unit id="org.eclipse.xtext.junit4" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xtext.ui" version="0.0.0"/>
+      <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201701180206/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.swtbot.go" version="2.4.0.201604200752"/>
