@@ -11,22 +11,22 @@
 package eu.numberfour.n4js.formatting2
 
 import eu.numberfour.n4js.services.N4JSGrammarAccess
+import eu.numberfour.n4js.utils.Log
+import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.eclipse.xtext.formatting2.ITextReplacer
 import org.eclipse.xtext.formatting2.ITextReplacerContext
+import org.eclipse.xtext.formatting2.internal.HiddenRegionReplacer
+import org.eclipse.xtext.formatting2.internal.TextReplacerMerger
 import org.eclipse.xtext.formatting2.regionaccess.IHiddenRegion
 import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion
 import org.eclipse.xtext.formatting2.regionaccess.ITextRegionExtensions
 import org.eclipse.xtext.formatting2.regionaccess.ITextSegment
-import org.eclipse.xtext.formatting2.internal.TextReplacerMerger
-import org.eclipse.xtext.formatting2.AbstractFormatter2
-import java.util.List
-import eu.numberfour.n4js.utils.Log
-import org.eclipse.xtext.formatting2.internal.HiddenRegionReplacer
 
 /**
  * 
@@ -58,6 +58,8 @@ import org.eclipse.xtext.formatting2.internal.HiddenRegionReplacer
 
 				// there is already a ";" so let's format it
 				region.prepend[noSpace; newLines = 0; highPriority];
+			} else if(region.nextSemanticRegion?.text == "}" && !region.isMultiline){
+				// do nothing 
 			} else if (previous.containsComment) {
 
 				// we're behind a comment - insert semicolon before the comment
@@ -195,15 +197,28 @@ import org.eclipse.xtext.formatting2.internal.HiddenRegionReplacer
 
 @Log
 class IndentHandlingTextReplaceMerger extends TextReplacerMerger {
+	val AbstractFormatter2 fmt
 	
 	new(AbstractFormatter2 formatter) {
 		super(formatter)
+		fmt = formatter
 	}
 	
 	/** Overridden for special case of {@link InsertSemi} & {@link HiddenRegionReplacer} merging. 
 	 * Calls super implementation if no InsertSemi object is involved */
 	override merge(List<? extends ITextReplacer> conflicting) {
 		if(conflicting.findFirst[it instanceof InsertSemi] === null ){
+			
+			// standard case, but not handled as we want by super because due to ASI there can be 
+			// HiddenRegionReplacer that have equal offsets and length but are not identical.    
+			val hrf = conflicting.filter(HiddenRegionReplacer).toList
+			if(hrf.size === conflicting.size) {
+				val merged = fmt.createHiddenRegionFormattingMerger.merge(hrf.map[formatting])
+				if(merged !== null) {
+					return fmt.createHiddenRegionReplacer(hrf.head.region, merged)
+				}
+			}
+			
 			// standard case
 			return super.merge(conflicting);
 		}

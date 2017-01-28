@@ -85,16 +85,16 @@ export public abstract class GenericLongName <ValueT extends SomethingLongHere>
         return {};
     }
 
-    public async fooBooGooZooGoo23495872948624876247624(bar: int): ~Object with {
-        bar: int?; baz: int?; baz2: int?; baz2: int?; baz43: int?; baz43098: int?;
-        ba098z43: int?; baz40983: int?; baz09843: int?;} {
+    public async fooBooGooZooGoo23495872948624876247624(bar: int): ~Object with {bar: int?; baz: int?;
+        baz2: int?; baz2: int?; baz43: int?; baz43098: int?; ba098z43: int?; baz40983: int?;
+        baz09843: int?;} {
 
         return {};
     }
 
-    public async fooBooGooZooGoo234958729486284876247624(bar: int): ~Object with {
-        bar: int?; baz: int?; baz2: int?; baz2: int?; baz43: int?; baz43098: int?;
-        ba098z43: int?; baz40983: int?; baz09843: int?;} {
+    public async fooBooGooZooGoo234958729486284876247624(bar: int): ~Object with {bar: int?; baz: int?;
+        baz2: int?; baz2: int?; baz43: int?; baz43098: int?; ba098z43: int?; baz40983: int?;
+        baz09843: int?;} {
 
         let p: Promise<ValueT, any>;
         p.then(val => {
