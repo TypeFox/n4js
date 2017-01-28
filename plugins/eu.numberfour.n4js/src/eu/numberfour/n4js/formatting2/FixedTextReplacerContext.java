@@ -31,7 +31,8 @@ public class FixedTextReplacerContext extends TextReplacerContext {
 		super(document);
 	}
 
-	private boolean isIdentityEdit(ITextReplacement repl) {
+	@Override
+	protected boolean isIdentityEdit(ITextReplacement repl) {
 		return repl.getReplacementText().equals(repl.getText());
 	}
 
