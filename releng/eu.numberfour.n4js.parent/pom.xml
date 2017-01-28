@@ -52,7 +52,7 @@ Contributors:
 		<encodingArgs>-Dfile.encoding=${file.encoding}</encodingArgs>
 
 		<!-- Maven POJO versions -->
-		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+		<maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
 		<maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
 		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -255,22 +255,22 @@ Contributors:
 							</execution>
 						</executions>
 				</plugin>
-				<plugin>
+				<!-- <plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>${maven-install-plugin.version}</version>
-					<!-- Disable install: -->
+					Disable install:
 						<executions>
 							<execution>
 								<id>default-install</id>
-								<!-- rebind to none -->
-								<!-- IDE-2368 some plugins are enabled specifically in their own poms:
+								rebind to none
+								IDE-2368 some plugins are enabled specifically in their own poms:
 									* releng/eu.numberfour.n4js.releng.utils
-								 -->
+
 								<phase />
 							</execution>
 						</executions>
-				</plugin>
+				</plugin> -->
 				<plugin>
 					<!--
 					The clean plugin is here configured to
