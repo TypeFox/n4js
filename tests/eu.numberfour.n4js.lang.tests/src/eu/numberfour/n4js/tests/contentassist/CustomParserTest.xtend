@@ -23,6 +23,7 @@ import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.parser.antlr.IUnorderedGroupHelper
 import org.eclipse.xtext.xbase.lib.util.ReflectExtensions
+import org.eclipse.xtext.xtext.RuleNames
 import org.junit.runner.RunWith
 
 /**
@@ -35,6 +36,7 @@ class CustomParserTest extends AbstractContentAssistParserTest implements Provid
 	@Inject TokenSourceFactory tokenSourceFactory
 	@Inject ContentAssistTokenTypeMapper tokenMapper
 	@Inject RequiredRuleNameComputer ruleNameComputer
+	@Inject RuleNames ruleNames
 
 	@Inject extension ReflectExtensions
 
@@ -45,6 +47,8 @@ class CustomParserTest extends AbstractContentAssistParserTest implements Provid
 			it.unorderedGroupHelper = this
 			it.initializeTokenTypes(tokenMapper, grammarAccess)
 			it.set('requiredRuleNameComputer', ruleNameComputer)
+			it.set('ruleNames', ruleNames)
+			it.initializeFor(ruleNames.allParserRules.head)
 		]
 	}
 
