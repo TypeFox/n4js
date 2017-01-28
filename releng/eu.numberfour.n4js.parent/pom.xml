@@ -83,7 +83,7 @@ Contributors:
 		<!-- <eclipse-signing-maven-plugin.version>1.0.5</eclipse-signing-maven-plugin.version> -->
 
 		<!-- current xtext version -->
-		<xtext.version>2.11.0.RC1</xtext.version>
+		<xtext.version>2.11.0.RC2</xtext.version>
 		<!-- compile xtend files to java -->
 <!-- 		<xtend-maven-plugin.version>${xtext.version}-SNAPSHOT</xtend-maven-plugin.version> -->
 		<xtend-maven-plugin.version>${xtext.version}</xtend-maven-plugin.version>
