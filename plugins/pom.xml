@@ -253,6 +253,18 @@ Contributors:
 						</execution>
 					</executions>
 					<dependencies>
+						<!-- workaround for https://github.com/NumberFour/n4js/issues/333 -->
+						<dependency>
+						    <groupId>org.slf4j</groupId>
+						    <artifactId>slf4j-jdk14</artifactId>
+						    <version>1.7.22</version>
+						</dependency>
+						<dependency>
+						    <groupId>org.slf4j</groupId>
+						    <artifactId>jcl-over-slf4j</artifactId>
+						    <version>1.7.22</version>
+						</dependency>
+						<!-- end workaround for https://github.com/NumberFour/n4js/issues/333 -->
 						<dependency>
 							<groupId>org.eclipse.equinox</groupId>
 							<artifactId>common</artifactId>
@@ -282,6 +294,11 @@ Contributors:
 							<groupId>org.eclipse.emf</groupId>
 							<artifactId>org.eclipse.emf.ecore.xcore</artifactId>
 							<version>${org.eclipse.emf.ecore.xcore-version}</version>
+						</dependency>
+						<dependency>
+						    <groupId>org.eclipse.xtext</groupId>
+						    <artifactId>org.eclipse.xtext.ecore</artifactId>
+						    <version>${xtext-version}</version>
 						</dependency>
 						<dependency>
 						    <groupId>org.eclipse.emf</groupId>
